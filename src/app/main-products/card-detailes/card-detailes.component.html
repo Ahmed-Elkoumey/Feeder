@@ -1,0 +1,41 @@
+<section class="border">
+    <div class="row ">
+       <div class="col-md-4 col-lg-6 border-end">
+        <img class="card-img-top" [src]="productDetail.image" [alt]="productDetail.name">
+       </div>
+      
+    <div class="col-md-12 col-lg-6 d-flex align-items-center">
+        
+        <div class="">
+            <h4 class="card-title fs-2 mb-3">Name Of Product : <br/>{{productDetail.name}}</h4>
+            <h4 class="card-title fs-4 mb-3">Created At : {{productDetail.createdAt |  date}}</h4>
+      
+            
+      
+        <div *ngIf="productDetail.count > 0; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <p class="text-success fs-3">
+            In Stock.
+          </p>
+        </ng-template>
+        
+        <ng-template #elseBlock>
+          <p class="text-danger fs-3">
+            Out Of Stock.
+          </p>
+        </ng-template>
+    
+    
+        <p class="fs-2">
+          {{productDetail.price | currency :"EG "}}
+          
+        </p>
+    
+      <div class="card-footer d-flex justify-content-around fs-3 text-danger">
+      Reviews
+      </div>
+      <p class="text-secondary fs-4">{{productDetail.reviews}}</p>
+        </div>
+    </div>
+    </div>
+    </section>

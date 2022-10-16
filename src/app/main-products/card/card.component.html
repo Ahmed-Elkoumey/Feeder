@@ -1,0 +1,33 @@
+<div class="card">
+
+    <div class="card-header">
+        <h4 class="card-title fs-5">{{card.name}}</h4>
+    </div>
+    <div class="card-body">
+
+        <div *ngIf="card.count > 0; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <p class="text-success">
+                In Stock.
+            </p>
+        </ng-template>
+        <ng-template #elseBlock>
+            <p class="text-danger">
+                Out Of Stock.
+            </p>
+        </ng-template>
+
+
+        <p>
+            {{card.price | currency :"EG "}}
+
+        </p>
+
+        <a class="btn color-green" (click)="getDetails()">
+            <fa-icon class="text-danger fs-4" [icon]="faMagnifyingGlass"></fa-icon>
+        </a>
+    </div>
+    <div class="card-footer">
+        <img class="card-img-bottom" [src]="card.image" alt="Card image">
+    </div>
+</div>

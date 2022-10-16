@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-md bg-second d-flex justify-content-around mb-5">
+    <div class="container">
+        <div class="icons d-flex justify-content-around w-25">
+            <div>
+                <div ngbDropdown class="d-inline-block mx-md-5">
+                    <div class="btn text-green d-flex flex-column justify-content-center align-items-center icon-wrap"
+                        id="dropdownBasic1" ngbDropdownToggle>
+
+                        <fa-icon class="text-green fs-4" [icon]="faShoppingBasket"></fa-icon>
+                        <span class="icon-number">0</span>
+
+                    </div>
+
+                    <div ngbDropdownMenu class="py-3 drp-mnu" aria-labelledby="dropdownBasic1">
+                        <div class="row">
+                            <app-wish-list></app-wish-list>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div ngbDropdown class="d-inline-block px-3 mx-md-5">
+                    <div class="btn text-green d-flex flex-column justify-content-center align-items-center icon-wrap"
+                        id="dropdownBasic1" ngbDropdownToggle>
+
+                        <fa-icon class="text-heart fs-4" [icon]="faHeart"></fa-icon>
+                        <span class="icon-number text-heart">0</span>
+                    </div>
+
+                    <div ngbDropdownMenu class="p-1 " aria-labelledby="dropdownBasic1">
+                        <div class="row p-2 dropdown-toggle">
+                            <app-wish-list></app-wish-list>
+                            
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a class="navbar-brand brand text-center w-50 " routerLink="/">Feeder</a>
+
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+
+            <div class="d-flex w-100 ">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-green" routerLink="/login">LogIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-heart " routerLink="/register">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

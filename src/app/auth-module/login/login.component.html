@@ -1,0 +1,95 @@
+<div class="container">
+
+
+  <div class="row pt-2">
+    <div class="col-md-6 m-auto">
+      <form #logForm="ngForm" class="border p-5 rounded-5">
+        <h2 class="navbar-brand brand text-center w-100 " routerLink="/">Feeder</h2>
+        <div class="mb-3">
+
+          <label for="userEmail" class="form-label">
+            Email address
+          </label>
+
+          <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" #user="ngModel"
+            name="user" pattern="\w+\@\w+\.\w+" ngModel required>
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+
+
+          <div *ngIf="
+                  (user.touched && !user.valid) || 
+                  (logForm.submitted  && !user.valid  ) 
+                ">
+
+            <div id="emailHelp" *ngIf="user.errors && user.errors['required']" class="form-text text-danger">
+              <div class="text-danger fs-4">
+                This field is required
+              </div>
+            </div>
+
+            <div id="emailHelp" *ngIf="user.errors && user.errors['pattern']" class="form-text text-danger">
+              <div class="text-danger fs-4">
+                Not Valied
+              </div>
+
+
+
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">
+            Password
+          </label>
+          <input type="password" class="form-control" id="passhelp" #pass="ngModel" name="pass"
+            pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$" ngModel required>
+
+          <div *ngIf="
+                  (pass.touched && !pass.valid) || 
+                  (logForm.submitted  && !pass.valid  ) 
+                ">
+
+            <div id="passhelp" *ngIf="pass.errors && pass.errors['required']" class="form-text text-danger">
+              <div class="text-danger fs-5">
+                This field is required
+              </div>
+
+            </div>
+
+
+            <div id="passhelp" *ngIf="pass.errors && pass.errors['pattern']" class="form-text text-danger">
+              <div class="text-danger">
+                minimum of 8 characters long-
+                lower case -
+                upper case.
+                one number.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <a class="nav-link" (click)="onSubmit()">Submit</a>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="py-4 text-center fs-4">
+    <p class="nav-link active" >If You are new here please <button
+        class="btn btn-outline-info" (click)="goToRigister()">Register</button></p>
+  </div>
+
+</div>
