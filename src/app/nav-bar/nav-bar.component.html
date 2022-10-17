@@ -3,17 +3,17 @@
         <div class="icons d-flex justify-content-around w-25">
             <div>
                 <div ngbDropdown class="d-inline-block mx-md-5">
-                    <div class="btn text-green d-flex flex-column justify-content-center align-items-center icon-wrap"
+                    <div class="btn btn-outline-secondary text-green d-flex flex-column justify-content-center align-items-center icon-wrap"
                         id="dropdownBasic1" ngbDropdownToggle>
-
+                    
                         <fa-icon class="text-green fs-4" [icon]="faShoppingBasket"></fa-icon>
-                        <span class="icon-number">0</span>
+                       
 
                     </div>
 
                     <div ngbDropdownMenu class="py-3 drp-mnu" aria-labelledby="dropdownBasic1">
                         <div class="row">
-                            <app-wish-list></app-wish-list>
+                            <app-shopping-cart></app-shopping-cart>
                         </div>
 
                     </div>
@@ -22,12 +22,12 @@
 
             <div class="">
                 <div ngbDropdown class="d-inline-block px-3 mx-md-5">
-                    <div class="btn text-green d-flex flex-column justify-content-center align-items-center icon-wrap"
+                    <button class="btn btn-outline-warning text-green d-flex flex-column justify-content-center align-items-center icon-wrap"
                         id="dropdownBasic1" ngbDropdownToggle>
 
                         <fa-icon class="text-heart fs-4" [icon]="faHeart"></fa-icon>
-                        <span class="icon-number text-heart">0</span>
-                    </div>
+                        
+                    </button>
 
                     <div ngbDropdownMenu class="p-1 " aria-labelledby="dropdownBasic1">
                         <div class="row p-2 dropdown-toggle">

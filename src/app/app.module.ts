@@ -18,7 +18,8 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { StoreModule } from '@ngrx/store';
+import { addReducer } from './store/wish.reducer';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ToastrModule.forRoot({ positionClass: 'toast-bottom-right' }),
     ToastContainerModule ,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({
+      wish :addReducer
+    }, {})
     
   ],
   providers: [],

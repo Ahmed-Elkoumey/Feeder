@@ -22,10 +22,21 @@
             {{card.price | currency :"EG "}}
 
         </p>
+<div class="w-100 d-flex justify-content-around">
+    
+    <button class="btn color-green" (click)="getDetails()">
+        <fa-icon class="text-secondary fs-4" [icon]="faMagnifyingGlass"></fa-icon>
+    </button>
 
-        <a class="btn color-green" (click)="getDetails()">
-            <fa-icon class="text-danger fs-4" [icon]="faMagnifyingGlass"></fa-icon>
-        </a>
+    <button class="btn btn-secondary " (click)="pushToCart(card)">
+        <fa-icon class="text-green fs-4" [icon]="faBasketShopping"></fa-icon>
+    </button>
+
+    <button class="btn btn-warning " (click)="addToWishList(card)">
+        <fa-icon class="text-heart fs-4" [icon]="faHeart"></fa-icon>
+    </button>
+</div>
+
     </div>
     <div class="card-footer">
         <img class="card-img-bottom" [src]="card.image" alt="Card image">

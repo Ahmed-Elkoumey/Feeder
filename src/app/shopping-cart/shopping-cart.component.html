@@ -1,1 +1,37 @@
-<p>shopping-cart works!</p>
+<div class="col-12">
+
+
+
+    <div class="text-center text-danger" *ngIf="productDetails.length == 0">
+        No Products
+    </div>
+
+    <div *ngIf="productDetails.length != 0">
+
+        <div class="row ">
+
+            <div id="{{ product.id }}" *ngFor="let product of productDetails; let i = index">
+
+
+
+                <div class="d-flex justify-content-around align-items-center border-bottom m-2">
+
+                    <div class="col">{{ i + 1 }}</div>
+
+                    <div class="col"><img [src]="product.image" class="w-100" alt="productDetails.name" /></div>
+
+                    <div class="col">{{ product.price }}</div>
+                    <div class="col"><button (click)="getDetails(product.id)" class="btn">
+                            <fa-icon class="text-info" [icon]="faMagnifyingGlass"></fa-icon>
+                        </button></div>
+                    <div class="col"><button (click)="removeItem(product)" class="btn">
+                            <fa-icon class="text-danger" [icon]="faTrash"></fa-icon>
+                        </button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,11 +1,37 @@
+<div class="col-12">
 
-    <div class="col-12">
-        <div class="row">
 
-            <p class="col-3">img</p>
-            <p class="col-3">img</p>
-            <p class="col-3">img</p>
-            <p class="col-3">img</p>
-        </div>
 
-    </div>
+   <div class="text-center text-danger" *ngIf="wishDetails.length == 0">
+       No Products
+   </div>
+
+   <div *ngIf="wishDetails.length != 0">
+
+       <div class="row ">
+
+           <div id="{{ card.id }}" *ngFor="let card of wishDetails; let i = index">
+
+
+
+               <div class="d-flex justify-content-around align-items-center border-bottom m-2">
+
+                  <div class="col">{{ i + 1 }}</div>
+
+                  <div class="col"><img [src]="card.image" class="w-100" alt="productDetails.name" /></div>
+
+                  <div class="col">{{ card.price }}</div>
+                  <div class="col"><button (click)="getDetails(card.id)" class="btn">
+                          <fa-icon class="text-info" [icon]="faMagnifyingGlass"></fa-icon>
+                      </button></div>
+                  <div class="col"><button (click)="removeItem(card)" class="btn">
+                          <fa-icon class="text-danger" [icon]="faTrash"></fa-icon>
+                      </button></div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+</div>

@@ -78,7 +78,7 @@ goToLogin(){
   onSubmit(){
     this.router.navigate(['/login']);
 
-    this.toastr.showSuccess(
+    this.toastr.showWarning(
       'Rigester Success !!',
       'Please Write your Email & PassWord'
     );

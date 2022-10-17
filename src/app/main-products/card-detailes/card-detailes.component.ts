@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductType } from 'src/app/interface/product-type';
 import { ApiProductsService } from 'src/app/services/api-products.service';
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-card-detailes',
   templateUrl: './card-detailes.component.html',
   styleUrls: ['./card-detailes.component.scss'],
+  
 })
 export class CardDetailesComponent implements OnInit {
 
@@ -14,7 +16,8 @@ export class CardDetailesComponent implements OnInit {
 
   constructor(
     private getDetail: ApiProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+  
   ) {}
 
   ngOnInit(): void {
@@ -22,4 +25,6 @@ export class CardDetailesComponent implements OnInit {
 console.log(this.route.snapshot.params);
 this.getDetail.getProductsListDetail(parm['id']).subscribe((detail)=>this.productDetail = detail)
   }
+
+  
 }

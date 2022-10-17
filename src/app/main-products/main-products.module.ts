@@ -4,16 +4,18 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { CardComponent } from './card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardDetailesComponent } from './card-detailes/card-detailes.component';
-
+import { CuonterService } from '../services/cuonter.service';
 
 @NgModule({
   declarations: [
     ProductsListComponent,
     CardComponent,
     CardDetailesComponent,
+    
   ],
   imports: [CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    
   ],
 
   exports: [
